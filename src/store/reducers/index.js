@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import posts from "./user_reducer";
-import user from "./posts_reducer";
+import posts from "./posts_reducer";
+import user from "./user_reducer";
 
 const appReducers = combineReducers({
-  user,
   posts,
+  user,
 });
 
 export default appReducers;
