@@ -14,6 +14,12 @@ const postsReducer = (state = {}, action) => {
         postById: action.payload,
       };
 
+    case types.CLEAR_POST_BY_ID:
+      return {
+        ...state,
+        postById: {},
+      };
+
     default:
       return state;
   }

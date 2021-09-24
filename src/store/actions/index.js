@@ -19,3 +19,7 @@ export const getPostById = (id) => ({
   type: types.GET_POSTS_BY_ID,
   payload: api.getPostById(id),
 });
+
+export const clearPostById = () => ({
+  type: types.CLEAR_POST_BY_ID,
+});

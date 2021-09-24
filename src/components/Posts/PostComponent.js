@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Moment from "react-moment";
 import NewsLetter from "../ulits/NewsLetter";
-import { getPostById } from "../../store/actions";
+import { getPostById, clearPostById } from "../../store/actions";
+import { showToast } from "../ulits/tools";
 
 const PostComponent = (props) => {
   const post = useSelector((state) => state.posts);
@@ -11,6 +12,19 @@ const PostComponent = (props) => {
   useEffect(() => {
     dispatch(getPostById(props.match.params.id));
   }, [dispatch, props.match.params.id]);
+
+  useEffect(() => {
+    if (post.postById === "404") {
+      showToast("ERROR", "The page you requested does not exist");
+      props.history.push("/");
+    }
+  }, [post, props.history]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearPostById());
+    };
+  }, [dispatch]);
 
   return (
     <>
