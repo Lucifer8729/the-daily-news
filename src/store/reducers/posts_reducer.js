@@ -8,6 +8,12 @@ const postsReducer = (state = {}, action) => {
         ...action.payload,
       };
 
+    case types.GET_POSTS_BY_ID:
+      return {
+        ...state,
+        postById: action.payload,
+      };
+
     default:
       return state;
   }

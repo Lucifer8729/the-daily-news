@@ -14,3 +14,8 @@ export const addNewsLetter = (data) => ({
 export const clearNewsLetter = () => ({
   type: types.CLEAR_NEWSLETTER,
 });
+
+export const getPostById = (id) => ({
+  type: types.GET_POSTS_BY_ID,
+  payload: api.getPostById(id),
+});

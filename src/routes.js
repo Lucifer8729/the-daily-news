@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Header from "./components/Posts/Header";
 import MainLayout from "./hoc/mainLayout";
 import Contact from "./components/Contact/Contact";
+import PostComponent from "./components/Posts/PostComponent";
 
 const Routes = () => {
   return (
@@ -12,6 +13,7 @@ const Routes = () => {
       <Header />
       <MainLayout>
         <Switch>
+          <Route path="/article/:id" component={PostComponent} />
           <Route path="/contact" component={Contact} />
           <Route path="/" component={Home} />
         </Switch>

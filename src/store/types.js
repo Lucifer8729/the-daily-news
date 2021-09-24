@@ -2,6 +2,7 @@ const types = {
   GET_POSTS: "GET_POSTS",
   ADD_NEWSLETTER: "ADD_NEWSLETTER",
   CLEAR_NEWSLETTER: "CLEAR_NEWSLETTER",
+  GET_POSTS_BY_ID: "GET_POSTS_BY_ID",
 };
 
 export default types;
